@@ -21,12 +21,15 @@
 </p>
 
 <p>
-<%= render @customer.orders %>
+<%@customer.orders.each do |order|%>
+ <%= render partial: "orders/orders", locals: {order: order} %>
+ <%end%>
 </p>
 
 
-
+<br>
+<br>
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
--------------------------------------------
+
 

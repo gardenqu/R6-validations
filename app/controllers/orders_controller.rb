@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+    before_action :set_customer, only: %i[update create]
     before_action :set_order, only: %i[show edit update destroy]
     
 
@@ -20,13 +21,15 @@ class OrdersController < ApplicationController
 
 
     def update
+       # set_customer
         @order.update(order_params)
         redirect_to @customer
+
 
     end
 
     def create
-        set_customer
+        #set_customer
         @order = @customer.orders.create(order_params)
         redirect_to @customer  
        
@@ -34,7 +37,8 @@ class OrdersController < ApplicationController
 
     def destroy
         @order.destroy
-        redirect_to @posts
+        redirect_to customer_path(@order.customer_id)
+        
     end
 
 
@@ -46,7 +50,7 @@ class OrdersController < ApplicationController
     end
 
     def set_customer
-         @customer = Customer.find(params[:order][:customer_id])
+        @customer = Customer.find(params[:order][:customer_id])
     end
 
     def order_params

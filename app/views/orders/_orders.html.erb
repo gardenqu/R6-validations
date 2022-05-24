@@ -1,0 +1,14 @@
+<div>
+<p>
+  <strong>Product name:</strong>
+  <%= @order.product_name%>
+</p>
+
+<p>
+  <strong>Product count:</strong>
+  <%= @order.product_count %>
+</p>
+</div>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%=link_to'Delete', @order, method: :delete %>

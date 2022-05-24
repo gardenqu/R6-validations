@@ -97,5 +97,5 @@ class CustomersController < ApplicationController
       Rails.logger.debug("We had a not found exception.")
       flash.alert = e.to_s
       redirect_to customers_path
-end
+    end
 end

@@ -20,11 +20,19 @@
   <%= @customer.email %>
 </p>
 
-<p>
+
+<table>
+<% if @customer.orders.present?%>
+ <tr>
+      <th>Product</th>
+      <th>Count</th>
+  </tr>
+  <%end%>
 <%@customer.orders.each do |order|%>
  <%= render partial: "orders/orders", locals: {order: order} %>
  <%end%>
-</p>
+ </table>
+
 
 
 <br>

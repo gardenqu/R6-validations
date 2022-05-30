@@ -60,16 +60,18 @@ end
     customer_attributes = FactoryBot.attributes_for(:customer)
     expect { put customer_path(id: customer.id), params: {customer: customer_attributes}
   }.to_not change(Customer, :count)
-    expect(response).to redirect_to customer_path(id: Customer.last.id)
 
-
+  expect(response).to redirect_to customer_path(id: Customer.last.id)
+ 
     end
   end
   describe "put customer_path with invalid data" do
     it "does not update the customer record or redirect"do
     customer= FactoryBot.create(:customer)
    customer.first_name=nil
-    expect { put customer_path(id:12), params: {customer: {first_name: customer.first_name, last_name: customer.last_name, email: customer.email}}
+
+    expect { put customer_path(id: customer.id), params: {customer: {first_name: customer.first_name, last_name: customer.last_name, email: customer.email}}
+
   }.to_not change(Customer, :count)
     expect(response).to render_template(:edit)
 

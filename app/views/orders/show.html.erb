@@ -1,3 +1,5 @@
 
-<%= render partial: "orders", locals: {order: @order} %>
-<%= link_to 'Back', orders_path %>
+<div class="card shadow p-3 mb-5 bg-white rounded">
+<%= render partial: "orders", locals: {order: @order},class: "btn btn-primary" %>
+<%= link_to 'Back', orders_path, class: "btn btn-secondary text-white"%>
+</div>

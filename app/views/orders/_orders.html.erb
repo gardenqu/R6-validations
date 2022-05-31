@@ -1,10 +1,10 @@
 
 
-  <table>
-    <td><%= order.product_name%></td>
-    <td> <%= order.product_count %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %> 
-        <%=link_to'Delete', order, method: :delete %></td>
+  <table class="table">
+    <td class="col-3"><%= order.product_name%></td>
+    <td class="col-3" > <%= order.product_count %></td>
+    <td ><%= link_to 'Edit', edit_order_path(order), class: "btn btn-secondary text-white" %> 
+        <%=link_to 'Delete', order, method: :delete, class: "btn btn-secondary text-white"  %></td>
 
   </table>
 

@@ -19,3 +19,12 @@
     background-image: url('coffee.webp');
     background-size: cover;
   } 
+
+  @font-face {
+    font-family: 'Dino';
+    src: url('Dinosaur.ttf');
+ }
+
+ h1 {
+   font-family: 'Dino';
+ }

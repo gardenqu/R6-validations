@@ -25,10 +25,13 @@ RSpec.describe "OrdersControllers", type: :request do
 
 describe "get new_order_path" do
     it "renders the :new template"do
+    
     get new_order_path
     expect(response).to render_template(:new)
 end
   end
+
+
   describe "get edit_order_path" do
     it "renders the :edit template"do
     customer = FactoryBot.create(:customer)

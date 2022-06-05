@@ -17,8 +17,8 @@
       <tr>
        <td><%= order.product_name%></td>
         <td><%= order.product_count %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Show', order, class: "btn btn-secondary text-white"  %></td>
+        <td><%= link_to 'Edit', edit_order_path(order), class: "btn btn-secondary text-white" %></td>
        
       </tr>
     <% end %>
@@ -27,6 +27,6 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
-<%= link_to 'All Customers', customers_path %>
+<%= link_to 'New Order', new_order_path, class: "btn btn-secondary text-white"%>
+<%= link_to 'Back', customers_path, class: "btn btn-secondary text-white"%>
 
